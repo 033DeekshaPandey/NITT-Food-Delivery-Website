@@ -28,7 +28,7 @@ export default function Cart() {
     for (let i = 0; i < data.length; i++) {
       const { email, ...temp } = data[i];
       temp.userEmail = userEmail;
-      response = await fetch("https://nitt-food-delivery-website.onrender.com/api/orderData", {
+      response = await fetch("https://nitt-food-delivery-backend.onrender.com/api/orderData", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export default function Cart() {
       });
     }
 
-    let res = await fetch("https://nitt-food-delivery-website.onrender.com/api/checkout", {
+    let res = await fetch("https://nitt-food-delivery-backend.onrender.com/api/checkout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
