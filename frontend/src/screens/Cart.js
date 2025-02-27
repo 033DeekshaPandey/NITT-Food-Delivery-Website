@@ -28,7 +28,7 @@ export default function Cart() {
     for (let i = 0; i < data.length; i++) {
       const { email, ...temp } = data[i];
       temp.userEmail = userEmail;
-      response = await fetch("http://localhost:5000/api/orderData", {
+      response = await fetch("https://nitt-food-delivery-website.onrender.com/api/orderData", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export default function Cart() {
       });
     }
 
-    let res = await fetch("http://localhost:5000/api/checkout", {
+    let res = await fetch("https://nitt-food-delivery-website.onrender.com/api/checkout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -62,7 +62,7 @@ export default function Cart() {
       description: "RazorPay",
       // image: "https://avatars.githubusercontent.com/u/25058652?v=4",
       order_id: order.id,
-      callback_url: "http://localhost:5000/api/paymentverification",
+      callback_url: "https://nitt-food-delivery-website.onrender.com/api/paymentverification",
       prefill: {
         name: "XYZ",
         email: "XYZ@example.com",
