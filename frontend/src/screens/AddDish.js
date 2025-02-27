@@ -17,7 +17,7 @@ function AddDish() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(dish);
-    const response = await fetch("https://nitt-food-delivery-website.onrender.com/api/fooditem", {
+    const response = await fetch("https://nitt-food-delivery-backend.onrender.com/api/fooditem", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
