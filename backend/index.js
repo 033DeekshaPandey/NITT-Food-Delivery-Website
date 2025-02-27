@@ -6,7 +6,7 @@ const { header } = require("express-validator");
 const Razorpay = require("razorpay");
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://nitt-food-delivery-frontend.onrender.com/");
+  res.setHeader("Access-Control-Allow-Origin", "https://nitt-food-delivery-frontend.onrender.com");
   res.setHeader(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
