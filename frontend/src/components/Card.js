@@ -16,7 +16,7 @@ export default function Card(props) {
 
   const loadData = async () => {
     let email = props.foodItem.email;
-    const response = await fetch("https://nitt-food-delivery-website.onrender.com/api/getuser", {
+    const response = await fetch("https://nitt-food-delivery-backend.onrender.com/api/getuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
