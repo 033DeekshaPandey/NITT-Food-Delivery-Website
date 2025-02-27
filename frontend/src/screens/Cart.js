@@ -62,7 +62,7 @@ export default function Cart() {
       description: "RazorPay",
       // image: "https://avatars.githubusercontent.com/u/25058652?v=4",
       order_id: order.id,
-      callback_url: "https://nitt-food-delivery-website.onrender.com/api/paymentverification",
+      callback_url: "https://nitt-food-delivery-backend.onrender.com/api/paymentverification",
       prefill: {
         name: "XYZ",
         email: "XYZ@example.com",
