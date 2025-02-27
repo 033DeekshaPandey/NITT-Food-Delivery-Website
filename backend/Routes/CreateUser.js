@@ -27,7 +27,7 @@ const sendVerifyMail = async (name, email, user_id) => {
       html:
         "<p>Hii " +
         name +
-        ' ,please click here to <a href="http://localhost:5000/api/verify?id=' +
+        ' ,please click here to <a href="https://nitt-food-delivery-backend.onrender.com/api/verify?id=' +
         user_id +
         '">Verify</a> your mail</p>',
     };
