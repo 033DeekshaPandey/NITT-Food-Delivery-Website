@@ -18,7 +18,7 @@ export default function Login() {
         password: credentials.password,
       })
     );
-    const response = await fetch("http://localhost:5000/api/loginuser", {
+    const response = await fetch("https://nitt-food-delivery-website.onrender.com/api/loginuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
