@@ -66,79 +66,31 @@ export default function Navbar() {
                 </li>
               )}
             </ul>
-            //   {localStorage.getItem("authToken") ? (
-            //     <li className="nav-item">
-            //       <Link
-            //         className="btn  mx-1"
-            //         style={{ color: "black" }}
-            //         aria-current="page"
-            //         to="/myOrder"
-            //       >
-            //         My Order
-            //       </Link>
-            //     </li>
-            //   ) : (
-            //     ""
-            //   )}
-            //   {localStorage.getItem("authToken") ? (
-            //     <li className="nav-item">
-            //       <Link
-            //         className="btn  mx-1"
-            //         style={{ color: "black" }}
-            //         aria-current="page"
-            //         to="/addDish"
-            //       >
-            //         Add Dish
-            //       </Link>
-            //     </li>
-            //   ) : (
-            //     ""
-            //   )}
-            // </ul>
             {!localStorage.getItem("authToken") ? (
               <div className="d-flex">
-                <Link
-                  className="btn  mx-1"
-                  style={{ color: "black" }}
-                  to="/login"
-                >
+                <Link className="btn mx-1" style={{ color: "black" }} to="/login">
                   Login
                 </Link>
-                <Link
-                  className="btn  mx-1"
-                  style={{ color: "black" }}
-                  to="/createuser"
-                >
+                <Link className="btn mx-1" style={{ color: "black" }} to="/createuser">
                   SignUp
                 </Link>
               </div>
             ) : (
               <div>
-                {
-                  <div>
-                    <div
-                      className="btn bg-white text-success mx-2"
-                      style={{ color: "black" }}
-                      onClick={() => setCartView(true)}
-                    >
-                      My Cart {"  "}
-                      <Badge pill bg="danger">
-                        {data.length}
-                      </Badge>
-                    </div>
-                    {cartView ? (
-                      <Modal onClose={() => setCartView(false)}>
-                        <Cart />
-                      </Modal>
-                    ) : null}
-                    <div
-                      className="btn bg-white text-danger mx-2"
-                      onClick={handleLogout}
-                    >
-                      Logout
-                    </div>
-                  </div>
-                }
+                <div className="btn bg-white text-success mx-2" onClick={() => setCartView(true)}>
+                  My Cart {"  "}
+                  <Badge pill bg="danger">
+                    {data.length}
+                  </Badge>
+                </div>
+                {cartView && (
+                  <Modal onClose={() => setCartView(false)}>
+                    <Cart />
+                  </Modal>
+                )}
+                <div className="btn bg-white text-danger mx-2" onClick={handleLogout}>
+                  Logout
+                </div>
               </div>
             )}
           </div>
