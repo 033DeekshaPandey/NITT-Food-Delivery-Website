@@ -99,8 +99,8 @@ export default function Signup() {
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">Login As</label>
-            <select className="myinput" value={role} onChange={(e) => setRole(e.target.value)}>
+            <label className="form-label">Sign Up As</label>
+            <select className="myinput" value={credentials.role} onChange={(e) => setCredentials({ ...credentials, role: e.target.value })}>
               <option value="student">Student</option>
               <option value="vendor">Vendor</option>
             </select>
