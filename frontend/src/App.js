@@ -25,8 +25,9 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/createuser" element={<Signup />} />
-            <Route exact path="/myOrder" element={<MyOrder/>} />
-            <Route exact path="/addDish" element={<AddDish></AddDish>}/>
+            <Route exact path="/myOrder" element={<MyOrder />} />
+            <Route exact path="/addDish" element={<AddDish />}/>
+            <Route exact path="/vendorDashboard" element={<VendorDashboard />} />
           </Routes>
         </div>
       </Router>
