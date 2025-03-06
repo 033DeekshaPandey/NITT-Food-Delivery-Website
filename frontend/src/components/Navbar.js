@@ -11,8 +11,10 @@ export default function Navbar() {
   const [cartView, setCartView] = useState(false);
   let data = useCart();
   const navigate = useNavigate();
+  const userRole = localStorage.getItem("userRole");
   const handleLogout = () => {
     localStorage.removeItem("authToken");
+    localStorage.removeItem("userRole");
     navigate("/login");
   };
   return (
@@ -49,35 +51,50 @@ export default function Navbar() {
                   Home
                 </Link>
               </li>
-              {localStorage.getItem("authToken") ? (
+              {userRole === "student" && (
                 <li className="nav-item">
-                  <Link
-                    className="btn  mx-1"
-                    style={{ color: "black" }}
-                    aria-current="page"
-                    to="/myOrder"
-                  >
-                    My Order
+                  <Link className="btn mx-1" style={{ color: "black" }} to="/myOrder">
+                    My Orders
                   </Link>
                 </li>
-              ) : (
-                ""
               )}
-              {localStorage.getItem("authToken") ? (
+              {userRole === "vendor" && (
                 <li className="nav-item">
-                  <Link
-                    className="btn  mx-1"
-                    style={{ color: "black" }}
-                    aria-current="page"
-                    to="/addDish"
-                  >
+                  <Link className="btn mx-1" style={{ color: "black" }} to="/addDish">
                     Add Dish
                   </Link>
                 </li>
-              ) : (
-                ""
               )}
             </ul>
+            //   {localStorage.getItem("authToken") ? (
+            //     <li className="nav-item">
+            //       <Link
+            //         className="btn  mx-1"
+            //         style={{ color: "black" }}
+            //         aria-current="page"
+            //         to="/myOrder"
+            //       >
+            //         My Order
+            //       </Link>
+            //     </li>
+            //   ) : (
+            //     ""
+            //   )}
+            //   {localStorage.getItem("authToken") ? (
+            //     <li className="nav-item">
+            //       <Link
+            //         className="btn  mx-1"
+            //         style={{ color: "black" }}
+            //         aria-current="page"
+            //         to="/addDish"
+            //       >
+            //         Add Dish
+            //       </Link>
+            //     </li>
+            //   ) : (
+            //     ""
+            //   )}
+            // </ul>
             {!localStorage.getItem("authToken") ? (
               <div className="d-flex">
                 <Link
