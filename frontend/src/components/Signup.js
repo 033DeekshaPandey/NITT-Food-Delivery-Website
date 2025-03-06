@@ -98,6 +98,13 @@ export default function Signup() {
               id="exampleInputPassword1"
             />
           </div>
+          <div className="mb-3">
+            <label className="form-label">Login As</label>
+            <select className="myinput" value={role} onChange={(e) => setRole(e.target.value)}>
+              <option value="student">Student</option>
+              <option value="vendor">Vendor</option>
+            </select>
+          </div>
           <button type="submit" className="m-3 mybtn">
             Submit
           </button>
