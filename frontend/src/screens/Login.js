@@ -9,6 +9,7 @@ export default function Login() {
     email: "",
     password: "",
   });
+  const [role, setRole] = useState("student");
   let navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
