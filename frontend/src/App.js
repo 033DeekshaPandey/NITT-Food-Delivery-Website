@@ -27,7 +27,6 @@ function App() {
             <Route exact path="/createuser" element={<Signup />} />
             <Route exact path="/myOrder" element={<MyOrder />} />
             <Route exact path="/addDish" element={<AddDish />}/>
-            <Route exact path="/vendorDashboard" element={<VendorDashboard />} />
           </Routes>
         </div>
       </Router>
